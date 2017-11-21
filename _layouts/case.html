@@ -1,0 +1,74 @@
+---
+layout: default
+---
+<main class="bg-near-white cf">
+	
+	<div class="bg-black-20 pv4-l">
+
+		<!-- responsive video thanks to embedresponsively.com -->
+      <style>
+      .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } 
+      .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+      </style>
+
+      <div class="mw8 center">
+	      <div class='embed-container bg-near-black' style="background-size: cover; background-image:url('https://i.vimeocdn.com/video/665325076_640x360.jpg');">
+          <iframe src='{{ page.video }}' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          
+          {% if page.restricted == true %}
+          <!-- Premium required overlay -->
+          <div class="dt w-100 vh-100 bg-black-50 v-mid ">
+
+          </div>
+          <!---->
+          {% endif %}
+	      
+        </div>
+      </div>
+      <!---->
+	</div>
+
+	<article class="mw8 center bg-near-white ph2 ph3-m ph4-l mb3 mb5-l">
+		
+			<a class="dib ttu f7 f6-ns b mt3 link rm-red bg-animate hover-bg-rm-red hover-white pa1 pa2-ns br1" href="/authors/{{ page.author | downcase | replace: ' ', '' }}">{{ page.author }}</a>
+      <h1 class="f3 f2-l lh-title mv2 mb3-l">{{ page.title }}</h1>
+
+			<div class="meta-row dt w-100 bb bw1 pb3 b--light-gray">
+
+        <div class="dtc v-mid w-50 db center bg-near-white">
+        <span class="f7 f6-ns">{% include difficulty.html %}</span>
+        {% for speciality in page.speciality %}
+          <a class="db dib-ns w4 w-auto-ns f7 f6-ns link bg-rm-red pa1 ph2 pa2-ns ph3-ns mv1 br1 white dim" href="/{{ speciality | downcase }}">{{ speciality | capitalize }}</a>
+        {% endfor %}
+        </div>
+
+				{% if site.mode != 'free' %}
+        <div class="dtc w-50 v-mid tr">
+          <a href="#" id="case-video-done" class="dib link f6 f5-ns f4-l b br-pill ba bw1 pa2 ph3 pa3-ns ph4-ns blue b--blue hover-bg-blue bg-animate hover-white v-mid">
+
+          <!-- Checkmark -->
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="currentColor" width="1em" viewBox="0 0 512 512">
+          <title>Checkmark icon</title>
+          <path d="M432 64l-240 240-112-112-80 80 192 192 320-320z"></path>
+          </svg>
+           Mark done</a>
+        </div>
+        {% endif %}
+			</div>
+
+		<section class="lh-copy f6 f5-ns f4-l">
+      {{ content }}
+    </section>
+
+
+
+	</article>
+
+</main>
+
+<section id="recommended-cases" class="w-100 pa2 pv3-l pa3-ns ph4-l bg-rm-black">
+  <div id="related-cases" class="container cf mw9 center">
+    <h2 class="f4 f3-ns fw4">Recommended Cases</h2>
+    {% include recommended-cases.html %}
+  </div>
+</section>

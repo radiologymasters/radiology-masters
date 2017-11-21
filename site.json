@@ -1,0 +1,19 @@
+---
+
+---
+[
+  {% for case in site.cases %}
+    {
+      "caseId"    : "{{ case.Id }}",
+      "title"     : "{{ case.title }}",
+      "url"       : "{{ case.url }}",
+      "author"    : "{{ case.author }}",
+      "speciality": "{{ case.speciality }}",
+      "difficulty": "{{ case.difficulty }}",
+      "video"     : "{{ case.video }} ",
+      "video-thumbnail" : "{{ case.video-thumbnail}}",
+      "restriced" : "{{ case.restricted }}",          
+      "content"   : "{{ case.content | escape }}"
+    } {% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+]

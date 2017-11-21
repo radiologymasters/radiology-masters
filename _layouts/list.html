@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<main class="bg-near-white">
+
+<section class="black-90 bg-black-10 bb bw1 b--black-20 w-100 pa2">
+	<h1 class="f3 f2-ns ma0 pa2 pa4-ns mw9 center">{{ page.speciality | capitalize }}</h1>
+</section>
+
+<section id="recommended-cases" class="mw9 center w-100 pa2 pv3-l pa3-ns ph4-l">
+  <div id="related-cases" class="container cf mw9 center">
+	{% assign cases = site.cases | where: "speciality", page.speciality %}
+	{% for case in cases %}
+	
+	{% case case.difficulty %}
+	{% when 'easy' %}
+	{% assign difficulty-color = 'bg-green' %}
+	{% when 'medium' %}
+	{% assign difficulty-color = 'bg-orange' %}
+	{% when 'difficult' %}
+	{% assign difficulty-color = 'bg-rm-red' %}
+	{% endcase %}
+	  <article class="fl w-100 w-50-m w-25-ns pa2-ns">
+    	<a href="{{ case.url }}" class="ph2 ph0-ns pb3 link db dim">
+      	<div class="z-0 aspect-ratio aspect-ratio--16x9 cover bg-center" style="background-image:url(http://mrmrs.github.io/images/0006.jpg);">
+      		<div>
+      			<span class="absolute left-1 top-1 f7 dib pa1 br1 w-auto {{ difficulty-color }} white">{{ case.difficulty | capitalize}}</span>
+      			<span class="absolute right-1 top-1 f7 dib pa1 br1 w-auto bg-blue white">{{ case.author }}</span>
+      			{% if case.restricted %}
+      			<span class="absolute right-1 bottom-1 f6 b dib pa1 br1 w-auto bg-yellow black-70 shadow-1"><i class="icon-star-full"></i> Premium</span>
+      			{% endif %}
+      		</div>
+      	</div>
+      	<div class="ph1">
+      		<h3 class="f5 mb0 pa1 br1 black-80">{{ case.title }}</h3>
+      	</div>
+    	</a>
+  </article>
+	{% endfor %}    
+  </div>
+</section>
+</main>

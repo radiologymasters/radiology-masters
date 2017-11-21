@@ -1,0 +1,73 @@
+title: Radiology Masters
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Changes site between free mode (no login/pay features) and premium mode.
+# In future this could be used for addition of other modes such as course mode - the actual action is to offer a site.mode variable to allow conditionals in templates
+# Options: free, premium
+mode: free
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+#plugins:
+#  jekyll_get:
+#    data: team
+#    json: 'https://api.airtable.com/v0/appwtzU8l4Ws9zttw/Cases?api_key=keynko6AC2MmOCZX3'
+
+collections:
+  cases:
+    output: true
+    permalink: /cases/:title/
+  authors:
+    output: true
+    permalink: /authors/:title/
+  pages:
+    permalink: /:title/
+  posts:
+    permalink: /:year/:title/
+
+# Speciality list - used to populate the header navigation amongst other things
+specialities:
+  - slug: gastrointestinal
+    name: Gastrointestinal
+    order: 1
+  - slug: musculoskeletal
+    name: Musculoskeletal
+    order: 0
+  - slug: chest
+    name: Chest
+    order: 2
+  - slug: neuro
+    name: Neuro
+    order: 3
+  - slug: headneck
+    name: Head & Neck
+    order: 4
+  - slug: breast
+    name: Breast
+    order: 5
+  - slug: genitourinary
+    name: Genitourinary
+    order: 6
+  - slug: paediatric
+    name: Paediatric
+    order: 8
+  - slug: frcr-exam-tips
+    name: FRCR Exam
+    order: 9
+
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
