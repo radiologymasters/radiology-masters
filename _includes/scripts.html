@@ -4,9 +4,8 @@
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
   crossorigin="anonymous"></script>
 
-{% if page.type == case %}
+{% if page.layout == "case" %}
 	<!-- JS plugins for case page -->
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/9e52ab8ed4/RadiologyMasters/style.css">
 	<script type="text/javascript">
 		window.caseId = "{{page.caseId}}";
 	</script>
