@@ -2,6 +2,7 @@ title: Radiology Masters
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+script_path: /assets/js
 
 # Changes site between free mode (no login/pay features) and premium mode.
 # In future this could be used for addition of other modes such as course mode - the actual action is to offer a site.mode variable to allow conditionals in templates
