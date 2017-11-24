@@ -1,5 +1,8 @@
 
-	<script src="{{ site.script_path }}/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 
 {% if page.type == case %}
 	<!-- JS plugins for case page -->
@@ -8,17 +11,17 @@
 		window.caseId = "{{page.caseId}}";
 	</script>
 
-	<script src="{{site.script_path}}/case.complete.js"></script>
-	<script src="{{site.script_path}}/case.related.js"></script>
-	<script src="{{site.script_path}}/case.stats.js"></script>
+	<script src="{{site.script_path}}/plugins/case.complete/case.complete.js"></script>
+	<script src="{{site.script_path}}/plugins/case.related/case.related.js"></script>
+	<script src="{{site.script_path}}/plugins/case.stats/case.stats.js"></script>
     <script src="{{site.script_path}}/index.js"></script>
-    <script src="{{site.script_path}}/player.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>e
     <!-- JS plugins for case page -->
 {% endif %}
 
-	<!-- JS plugins for every page -->    
-	<script src="{{site.script_path}}/firebase.js"></script>
-	<script src="{{site.script_path}}/settings.firebase.js"></script>
-    <script src="{{site.script_path}}/auth.js"></script>
-    <script src="{{site.script_path}}/display.name.plugin.js"></script>
-    <!-- JS plugins for every page -->
+<!-- JS plugins for every page -->    
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script src="{{site.script_path}}/shared/settings.firebase.js"></script>
+<script src="{{site.script_path}}/auth.js"></script>
+<script src="{{site.script_path}}/plugins/display.name/display.name.plugin.js"></script>
+<!-- JS plugins for every page -->
