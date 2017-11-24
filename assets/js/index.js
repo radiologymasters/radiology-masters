@@ -17,7 +17,7 @@ $(function () {
         });
     }
 
-    var caseId = "607f56b6-68d8-4518-b23f-b91a77ed9b4e";
+    var caseId = window.caseId;
     var speciality = "Musculoskeletal";
 
     $("#case-video-done").markComplete({ 
