@@ -1,12 +1,12 @@
 requirejs.config({
     paths: {
         // VENDOR
-        jquery: "/node_modules/jquery/dist/jquery.min",
+        jquery: "/assets/js/vendor/jquery.min",
         // INTERNAL
-        settings: '/shared/settings',
-        utils: '/shared/utils',
-        UserModel: "/shared/user.model",
-        SignupOAuthView: "/account/signup.oauth"
+        settings: '/assets/js/shared/settings',
+        utils: '/assets/js/shared/utils',
+        UserModel: "/assets/js/shared/user.model",
+        SignupOAuthView: "/assets/js/account/signup.oauth"
     }
 });
 

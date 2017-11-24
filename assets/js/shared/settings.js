@@ -1,6 +1,6 @@
 define("settings", function() {  
     return {
-        homeUrl: "/app",
+        homeUrl: "/index.html",
         loginUrl: "/account",
         unauthorizedUrl: "/admin/unauthorized.html",
         signupOAuthUrl: "/account/oauth-signup.html",
