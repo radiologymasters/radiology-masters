@@ -34,6 +34,7 @@ $.fn.updateStats = function(options) {
     }
 
     function markCaseAsViewed() {
+        console.log(_case);
         console.log("Marking case " + _case.caseId + " as viewed.");
         _case.stats.views += 1;
         _case.updateStats();
