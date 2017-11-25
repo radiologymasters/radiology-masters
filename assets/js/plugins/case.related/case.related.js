@@ -5,13 +5,13 @@ $.fn.relatedCases = function(options) {
     var _settings = $.extend({
         caseId: "",
         speciality: "",
-        listSelector: "ul"
+        maxRelatedCases: 4
     }, options);
 
     $(document).on("user-authenticated", handleUserAuthenticated);
     $(document).on("user-unauthenticated", handleUserUnautheticated);
 
-    var _list = this.find(_settings.listSelector);
+    var _container = $(this);
     
     function handleUserAuthenticated(e, user) {
         _user = user;
@@ -111,13 +111,34 @@ $.fn.relatedCases = function(options) {
             console.log("RELATED CASES", cases);
             
             for(var i = 0; i < cases.length; i++) {
+                
+                if (i == _settings.maxRelatedCases) {
+                    break;
+                }
+                
                 var caseInfo = cases[i];
                 var li = $("<li/>", { "class": "case" });
                 var h4 = $("<h4/>", { text: caseInfo.title });
                 var img = $("<img/>", { src: "http://apeg.com/apeg-dev/wp-content/themes/apeg-new/images/default_video_thumb.png" });
                 
-                li.append(img, h4);
-                _list.append(li);
+                var article = $("<article/>", { "class": "fl w-100 w-50-m w-25-ns pa2-ns" });
+                var a = $("<a/>", { href: "/cases/" + caseInfo.title, "class": "ph2 ph0-ns pb3 link db dim" });
+                var d1 = $("<div/>", { "class": "z-0 aspect-ratio aspect-ratio--16x9 cover bg-center", style: "background-image:url(http://mrmrs.github.io/images/0006.jpg);" });
+                var d2 = $("<div/>");
+                
+                var s1 = $("<span/>", { "class": "absolute left-1 top-1 f7 dib pa1 br1 w-auto white", text: caseInfo.complexity });
+                var s2 = $("<span/>", { "class": "absolute right-1 top-1 f7 dib pa1 br1 w-auto bg-blue white", text: caseInfo.createdByUserFullName });
+                
+                var d3 = $("<div/>", { "class": "ph1" });
+                var h3 = $("<h3/>", { "class": "f5 mb0 pa1 br1 black-80", text: caseInfo.title });
+                
+                d2.append(s1, s2);
+                d1.append(d2);
+                d3.append(h3);
+                a.append(d1, d3);
+                article.append(a);
+                
+                _container.append(article);
             }
             
             resolve(cases);

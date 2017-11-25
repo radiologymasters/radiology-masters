@@ -26,7 +26,8 @@ $(function () {
     
     $(".related-cases").relatedCases({ 
         "caseId": caseId,
-        "speciality": speciality
+        "speciality": speciality,
+        "maxRelatedCases": 4
     });
     
     $(".related-cases").updateStats({ 
