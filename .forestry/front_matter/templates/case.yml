@@ -1,0 +1,58 @@
+---
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+  config:
+    required: true
+  default: case
+- type: text
+  name: title
+  label: title
+  description: Case title
+  config:
+    required: true
+- type: field_group_list
+  name: specialty
+  label: Specialties
+  description: Select one or more specialties to categorise case
+  fields:
+  - type: select
+    config:
+      source:
+        type: simple
+      options:
+      - musculoskeletal
+      - breast
+      - chest
+      - cardiac
+      - paediatric
+      - gastrointestinal
+      - genitourinary
+      - neuro
+      - headneck
+      - frcr
+- type: select
+  config:
+    source:
+      type: simple
+    required: true
+    options:
+    - easy
+    - medium
+    - difficult
+  label: Difficulty
+  name: difficulty
+  default: easy
+- type: boolean
+  name: restricted
+  label: Restricted case?
+  description: Is this case subject to any restrictions?
+- type: text
+  name: video
+  label: Video URL
+  description: Paste URL to link in video for case
+  config:
+    required: true
