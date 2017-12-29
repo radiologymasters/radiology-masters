@@ -1,9 +1,9 @@
 {% case page.difficulty %}
-{% when 'easy' %}
+{% when 'Easy' %}
 	{% assign difficulty-color = 'bg-green' %}
-{% when 'medium' %}
+{% when 'Medium' %}
 	{% assign difficulty-color = 'bg-orange' %}
-{% when 'difficult' %}
+{% when 'Hard' %}
 	{% assign difficulty-color = 'bg-rm-red' %}
 {% endcase %}
 <a class="db dib-ns w4 w-auto-ns link pa1 ph2 pa2-ns ph3-ns mv1 br1 white dim {{ difficulty-color }}" href="/{{ page.difficulty }}-cases">{{ page.difficulty | capitalize }}</a>
