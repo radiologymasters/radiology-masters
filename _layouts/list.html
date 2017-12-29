@@ -9,7 +9,11 @@ layout: default
 
 <section id="recommended-cases" class="mw9 center w-100 pa2 pv3-l pa3-ns ph4-l">
   <div id="related-cases" class="container cf mw9 center">
-	{% assign cases = site.cases | where: "speciality", page.speciality %}
+	{% if page.speciality %}
+	  {% assign cases = site.cases | where: "speciality", page.speciality %}
+	 {% else %}
+	  {% assign cases = site.cases %}
+	 {% endif %}
 	{% for case in cases %}
 	
 	{% case case.difficulty %}
