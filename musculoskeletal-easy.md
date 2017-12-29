@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: musculoskeletal
-difficulty: easy
+speciality: Musculoskeletal
+difficulty: Easy
 ---
