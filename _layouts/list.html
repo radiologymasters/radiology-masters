@@ -13,11 +13,11 @@ layout: default
 	{% for case in cases %}
 	
 	{% case case.difficulty %}
-	{% when 'easy' %}
+	{% when 'Easy' %}
 	{% assign difficulty-color = 'bg-green' %}
-	{% when 'medium' %}
+	{% when 'Medium' %}
 	{% assign difficulty-color = 'bg-orange' %}
-	{% when 'difficult' %}
+	{% when 'Hard' %}
 	{% assign difficulty-color = 'bg-rm-red' %}
 	{% endcase %}
 	  <article class="fl w-100 w-50-m w-25-ns pa2-ns">
