@@ -1,4 +1,4 @@
 ---
 layout: list
-speciality: chest
+speciality: Chest
 ---
