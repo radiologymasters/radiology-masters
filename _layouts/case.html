@@ -13,7 +13,7 @@ layout: default
 
       <div class="mw8 center">
 	      <div class='embed-container bg-near-black' style="background-size: cover; background-image:url('{{ page.videoThumbnailLarge }}');">
-          <iframe src='{{ page.videoUrl }}' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+          <iframe src='https://player.vimeo.com/video/{{ page.videoId }}' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
           
           {% if page.restricted == true %}
           <!-- Premium required overlay -->
