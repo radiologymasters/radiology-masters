@@ -25,6 +25,13 @@ collections:
   posts:
     permalink: /:year/:title/
 
+defaults:
+  -
+    scope:
+      type: "cases"
+    values:
+      layout: "case"
+
 # Speciality list - used to populate the header navigation amongst other things
 specialities:
   - slug: gastrointestinal
