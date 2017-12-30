@@ -21,8 +21,10 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
 
                     if (isExistingUser) {
                         console.log("User already exists, skipping local account creation...", user.userId);
-
-                        handleSuccessfulRedirect(user);
+                        
+                        console.log("USER", user);
+                        
+                        //handleSuccessfulRedirect(user);
                         return;
                     }
 
