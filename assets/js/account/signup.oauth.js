@@ -24,8 +24,11 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
 
                     if (isExistingUser) {
                         console.log("User already exists, skipping local account creation...", user.userId);
-
-                        handleSuccessfulRedirect(user);
+                        
+                        user.load(firebase).then(function () {
+                            handleSuccessfulRedirect(user);
+                        });
+                        
                         return;
                     }
 
