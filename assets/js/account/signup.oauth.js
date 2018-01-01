@@ -9,6 +9,8 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel", "utils", "preferen
     
     function handleAuthenticationCookieCreation(user) {
         preferences.data.fullname = user.getFullName();
+        preferences.data.firstName = user.firstName;
+        preferences.data.lastName = user.lastName;
         preferences.data.userId = user.userId;
         preferences.save();
     }
