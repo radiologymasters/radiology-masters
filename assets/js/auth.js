@@ -45,7 +45,8 @@ $(function () {
     
     $(document).on("user-logout", function () {
         firebase.auth().signOut();
-        $.removeCookie("USER", { path: '/' });
+        $.cookie("USER", null, { path: '/' });
+        $(document).trigger("user-unauthenticated");
     });
     
     function deleteCookie(name, path, domain) {
