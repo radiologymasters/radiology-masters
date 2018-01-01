@@ -16,9 +16,7 @@ $(function () {
     
     console.log("PREFS", preferences);
     
-    user.load(firebase).then(function () {
-        $(document).trigger("user-authenticated", user)
-    });
+    $(document).trigger("user-authenticated", user);
 
     // firebase.auth().onAuthStateChanged(function(firebaseUser) {
         
