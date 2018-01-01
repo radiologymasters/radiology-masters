@@ -1,4 +1,4 @@
-define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, settings, User) {
+define("SignupOAuthView", ["jquery", "settings", "UserModel", "utils", "preferences"], function($, settings, User, utils, preferences) {
 
     function handleSuccessfulRedirect(user) {
         
@@ -6,6 +6,12 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
         
         console.log("Redirecting user to success page", user.userId);
        // window.location.href = settings.homeUrl;
+    }
+    
+    function handleAuthenticationCookieCreation(user) {
+        preferences.data.fullname = user.getFullName();
+        preferences.data.userId = user.userId;
+        preferences.save();
     }
 
     function handleUserAccountCreationError(user, error) {
@@ -26,6 +32,7 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
                         console.log("User already exists, skipping local account creation...", user.userId);
                         
                         user.load(firebase).then(function () {
+                            handleAuthenticationCookieCreation(user);
                             handleSuccessfulRedirect(user);
                         });
                         

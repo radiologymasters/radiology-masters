@@ -5,6 +5,7 @@ requirejs.config({
         // INTERNAL
         settings: '/assets/js/shared/settings',
         utils: '/assets/js/shared/utils',
+        preferences: '/assets/js/shared/preferences',
         UserModel: "/assets/js/shared/user.model",
         SignupOAuthView: "/assets/js/account/signup.oauth"
     }

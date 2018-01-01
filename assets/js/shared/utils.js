@@ -19,40 +19,10 @@ define("utils", function() {
         return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
     }
     
-    function _createCookie(name, value, expirationInDays) {
-        var date = new Date();
-        date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
-        
-        var expires = "expires=" + date.toUTCString();
-        
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-    
-    function _getCookieValue(name) {
-        var cookieName = name + "=";
-        var cookieValue = document.cookie.split(';');
-        
-        for(var i = 0; i < cookieValue.length; i++) {
-            var value = cookieValue[i];
-            
-            while (value.charAt(0) == ' ') {
-                value = value.substring(1);
-            }
-            
-            if (value.indexOf(cookieName) == 0) {
-                return value.substring(cookieName.length, value.length);
-            }
-        }
-        
-        return "";
-    }
-    
     return {
         getRouteParamValue: _getRouteParamValue,
         getQueryStringParamValue: _getQuerystringParamValue,
-        guid: _guid,
-        createCookie: _createCookie,
-        getCookieValue: _getCookieValue
+        guid: _guid
     };
 });
 
