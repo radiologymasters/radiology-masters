@@ -65,7 +65,7 @@ define("UserModel", ["utils"], function(utils) {
                     .once('value')
                     .then(function(userInfo) {
                         self.firstName = userInfo.val().firstName;
-                        self.lastName = userInfo.val().firstName;
+                        self.lastName = userInfo.val().lastName;
                         self.email = userInfo.val().email;
                         self.isAdmin = userInfo.val().isAdmin;
                         self.isEnabled = userInfo.val().isEnabled;
