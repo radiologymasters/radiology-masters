@@ -1,8 +1,11 @@
 define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, settings, User) {
 
     function handleSuccessfulRedirect(user) {
+        
+        console.log("User", user);
+        
         console.log("Redirecting user to success page", user.userId);
-        window.location.href = settings.homeUrl;
+       // window.location.href = settings.homeUrl;
     }
 
     function handleUserAccountCreationError(user, error) {
