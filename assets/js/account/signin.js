@@ -5,7 +5,7 @@ define("LoginView", ["jquery", "settings", "utils", "UserModel", "validate"], fu
         firebase.auth()
             .signInWithEmailAndPassword(userInfo.email, userInfo.password)
             .then(function(user) {
-               window.location.replace(settings.homeUrl);        
+               window.location.replace(settings.signupOAuthUrl);        
             })
             .catch(function(error) {
                 var errorMessage = error.message;
