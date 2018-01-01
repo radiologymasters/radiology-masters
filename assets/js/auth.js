@@ -44,9 +44,14 @@ $(function () {
     //     }
     // });
     
+    
+    function deleteCookie(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    
     $(document).on("user-logout", function () {
         firebase.auth().signOut();
-        $.cookie("USER", null, { path: '/' });
+        deleteCookie("USER");
         $(document).trigger("user-unauthenticated");
     });
     
