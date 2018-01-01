@@ -13,7 +13,7 @@ $(function () {
     
     var user = new User();
     user.userId = preferences.userId;
-    user.displayName = preferences.displayName;
+    user.displayName = preferences.fullname;
     
     console.log("PREFS", preferences);
     
