@@ -1,4 +1,4 @@
-define("preferences", function() {  
+define("preferences", ["json2"], function() {  
     
     return {
      
