@@ -1,20 +1,41 @@
 $(function () {
 
-    firebase.auth().onAuthStateChanged(function(firebaseUser) {
-        
-        if (firebaseUser) {
-            
-            var user = new User();
-            user.userId = firebaseUser.uid;
-            
-            user.load(firebase).then(function () {
-                $(document).trigger("user-authenticated", user)
-            });
-            
-        } else {
-            $(document).trigger("user-unauthenticated");
+    function loadPreferences () {
+        var the_cookie = document.cookie.split(';');
+        if (the_cookie[0]) {
+            var unescapedJson = unescape(the_cookie[0]);
+            this.data = JSON.parse(unescapedJson);
         }
+        return this.data;
+    }
+    
+    var preferences = loadPreferences();
+    
+    var user = new User();
+    user.userId = preferences.userId;
+    
+    console.log("PREFS", preferences);
+    
+    user.load(firebase).then(function () {
+        $(document).trigger("user-authenticated", user)
     });
+
+    // firebase.auth().onAuthStateChanged(function(firebaseUser) {
+        
+    //     if (firebaseUser) {
+            
+    //         var user = new User();
+            
+    //         // user.userId = firebaseUser.uid;
+            
+    //         // user.load(firebase).then(function () {
+    //         //     $(document).trigger("user-authenticated", user)
+    //         // });
+            
+    //     } else {
+    //         $(document).trigger("user-unauthenticated");
+    //     }
+    // });
     
     $(document).on("user-logout", function () {
         firebase.auth().signOut();
