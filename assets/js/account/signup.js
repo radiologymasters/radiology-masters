@@ -17,7 +17,7 @@ define("SignupView", ["jquery", "settings", "UserModel", "validate"], function($
         console.log("Redirecting user to success page", user.userId);
 
         setTimeout(function() {
-            window.location.replace(settings.homeUrl);
+            window.location.replace(settings.signupOAuthUrl);
         }, 1000);
     }
 
