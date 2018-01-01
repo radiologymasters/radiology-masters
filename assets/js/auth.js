@@ -5,7 +5,8 @@ $(function () {
         var cookies = document.cookie.split(';');
         
         if (cookies[0]) {
-            var unescapedJson = unescape(cookies[0]);
+            var cookieValue = cookies[0].split('=')[1];
+            var unescapedJson = unescape(cookieValue);
             data = JSON.parse(unescapedJson);
         }
         
@@ -49,14 +50,6 @@ $(function () {
         $(document).trigger("user-unauthenticated");
     });
     
-    function deleteCookie(name, path, domain) {
-      if(deleteCookie(name)) {
-        document.cookie = name + "=" +
-          ((path) ? ";path="+path:"")+
-          ((domain)?";domain="+domain:"") +
-          ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
-      }
-    }
 });
 
 function User() {
