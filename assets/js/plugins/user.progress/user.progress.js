@@ -6,11 +6,11 @@ $.fn.displayProgress = function(options) {
         speciality: null
     }, options);
 
-    $(document).on("user-authenticated", handleUserAuthenticated);
+    $(document).on("user-loaded", handleUserLoaded);
     $(document).on("user-unauthenticated", handleUserUnautheticated);
     $(document).on("case-state-changed", calculateProgress);
 
-    function handleUserAuthenticated(e, user) {
+    function handleUserLoaded(e, user) {
         _user = user;
         calculateProgress();
     }

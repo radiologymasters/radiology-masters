@@ -11,11 +11,11 @@ $.fn.markComplete = function(options) {
         incompleteClass: "incomplete",
     }, options);
 
-    $(document).on("user-authenticated", handleUserAuthenticated);
+    $(document).on("user-loaded", handleUserLoaded);
     $(document).on("user-unauthenticated", handleUserUnautheticated);
     $(document).on("case-state-toggle", handleCaseCompleted);
     
-    function handleUserAuthenticated(e, user) {
+    function handleUserLoaded(e, user) {
         _user = user;
         
         _self.on("click", handleMarkAsCompleteClicked);

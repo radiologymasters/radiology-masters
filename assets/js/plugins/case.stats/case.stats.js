@@ -7,11 +7,11 @@ $.fn.updateStats = function(options) {
         caseId: ""
     }, options);
     
-    $(document).on("user-authenticated", handleUserAuthenticated);
+    $(document).on("user-loaded", handleUserLoaded);
     $(document).on("user-unauthenticated", handleUserUnautheticated);
     $(document).on("case-completed", handleCaseCompleted);
     
-    function handleUserAuthenticated(e, user) {
+    function handleUserLoaded(e, user) {
         _user = user;
 
         _case = new Case();

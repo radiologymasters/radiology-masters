@@ -1,12 +1,15 @@
 $(function () {
 
     function loadPreferences () {
-        var the_cookie = document.cookie.split(';');
-        if (the_cookie[0]) {
-            var unescapedJson = unescape(the_cookie[0]);
-            this.data = JSON.parse(unescapedJson);
+        var data = null;
+        var cookies = document.cookie.split(';');
+        
+        if (cookies[0]) {
+            var unescapedJson = unescape(cookies[0]);
+            data = JSON.parse(unescapedJson);
         }
-        return this.data;
+        
+        return data;
     }
     
     var preferences = loadPreferences();
@@ -18,6 +21,10 @@ $(function () {
     console.log("PREFS", preferences);
     
     $(document).trigger("user-authenticated", user);
+
+    user.load(firebase).then(function () {
+        $(document).trigger("user-loaded", user);
+    });
 
     // firebase.auth().onAuthStateChanged(function(firebaseUser) {
         

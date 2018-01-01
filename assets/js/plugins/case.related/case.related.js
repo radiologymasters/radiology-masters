@@ -8,12 +8,12 @@ $.fn.relatedCases = function(options) {
         maxRelatedCases: 4
     }, options);
 
-    $(document).on("user-authenticated", handleUserAuthenticated);
+    $(document).on("user-loaded", handleUserLoaded);
     $(document).on("user-unauthenticated", handleUserUnautheticated);
 
     var _container = $(this);
     
-    function handleUserAuthenticated(e, user) {
+    function handleUserLoaded(e, user) {
         _user = user;
         
         console.log("LOADING RELATED CASES...", _settings.speciality);
