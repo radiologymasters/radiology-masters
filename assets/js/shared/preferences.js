@@ -1,4 +1,4 @@
-define("prefs", function() {  
+define("preferences", function() {  
     
     return {
      
