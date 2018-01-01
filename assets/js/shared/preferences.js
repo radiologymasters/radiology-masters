@@ -7,7 +7,8 @@ define("preferences", ["json2"], function() {
         load: function () {
             var the_cookie = document.cookie.split(';');
             if (the_cookie[0]) {
-                this.data = unescape(the_cookie[0]).parseJSON();
+                var unescapedJson = unescape(the_cookie[0]);
+                this.data = JSON.parse(unescapedJson);
             }
             return this.data;
         },
@@ -15,7 +16,8 @@ define("preferences", ["json2"], function() {
         save: function (expires, path) {
             var d = expires || new Date(2020, 02, 02);
             var p = path || '/';
-            document.cookie = escape(this.data.toJSONString())
+            var json = JSON.stringify(this.data);
+            document.cookie = escape(json)
                               + ';path=' + p
                               + ';expires=' + d.toUTCString();
         }
