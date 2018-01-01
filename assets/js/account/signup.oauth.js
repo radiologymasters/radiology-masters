@@ -21,10 +21,8 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
 
                     if (isExistingUser) {
                         console.log("User already exists, skipping local account creation...", user.userId);
-                        
-                        console.log("USER", user);
-                        
-                        //handleSuccessfulRedirect(user);
+
+                        handleSuccessfulRedirect(user);
                         return;
                     }
 
@@ -33,7 +31,7 @@ define("SignupOAuthView", ["jquery", "settings", "UserModel"], function($, setti
                     user.firstName = nameParts[0] || "";
                     user.lastName = nameParts[1] || "";
                     user.email = firebaseUser.email;
-                    user.isAdmin = true;
+                    user.isAdmin = false;
 
                     user.createRemoteAccount(firebase, handleSuccessfulRedirect, handleUserAccountCreationError);
                 })
