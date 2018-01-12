@@ -1,4 +1,5 @@
 ---
 layout: list
-speciality: Gastrointestinal
+speciality: gastrointestinal
+title: Gastrointestinal
 ---

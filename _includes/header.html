@@ -29,7 +29,7 @@
 	</div>
 
 <nav class="bg-black">
-  <div class="w-100 mw9-l center tc nowrap overflow-x-auto">
+  <div class="w-100 mw9-l center tc nowrap overflow-x-auto" style="-webkit-overflow-scrolling: touch;">
   {% assign specialities = site.specialities | sort: "order" %}
   {% for speciality in specialities %}
   <a class="link white-80 f5 dib pa2 pv3-l pv3-l bg-animate hover-bg-rm-black" href="/{{ speciality.slug | downcase }}" title="{{ speciality.name }} radiology tutorials">{{ speciality.name }}</a>
