@@ -7,40 +7,9 @@ layout: default
 	<h1 class="f3 f2-ns ma0 pa2 pa4-ns mw9 center">{{ page.speciality | capitalize }}</h1>
 </section>
 
-<section id="recommended-cases" class="mw9 center w-100 pa2 pv3-l pa3-ns ph4-l">
-  <div id="related-cases" class="container cf mw9 center">
-	{% if page.speciality %}
-	  {% assign cases = site.cases | where: "speciality", page.speciality %}
-	 {% else %}
-	  {% assign cases = site.cases %}
-	 {% endif %}
-	{% for case in cases %}
-	
-	{% case case.difficulty %}
-	{% when 'Easy' %}
-	{% assign difficulty-color = 'bg-green' %}
-	{% when 'Medium' %}
-	{% assign difficulty-color = 'bg-orange' %}
-	{% when 'Hard' %}
-	{% assign difficulty-color = 'bg-rm-red' %}
-	{% endcase %}
-	  <article class="fl w-100 w-50-m w-25-ns pa2-ns">
-    	<a href="{{ case.url }}" class="ph2 ph0-ns pb3 link db dim">
-      	<div class="z-0 aspect-ratio aspect-ratio--16x9 cover bg-center" style="background-image:url(http://mrmrs.github.io/images/0006.jpg);">
-      		<div>
-      			<span class="absolute left-1 top-1 f7 dib pa1 br1 w-auto {{ difficulty-color }} white">{{ case.difficulty | capitalize}}</span>
-      			<span class="absolute right-1 top-1 f7 dib pa1 br1 w-auto bg-blue white">{{ case.author }}</span>
-      			{% if case.restricted %}
-      			<span class="absolute right-1 bottom-1 f6 b dib pa1 br1 w-auto bg-yellow black-70 shadow-1"><i class="icon-star-full"></i> Premium</span>
-      			{% endif %}
-      		</div>
-      	</div>
-      	<div class="ph1">
-      		<h3 class="f5 mb0 pa1 br1 black-80">{{ case.title }}</h3>
-      	</div>
-    	</a>
-  </article>
-	{% endfor %}    
+<section id="case-listing" class="mw9 center w-100 pa2 pv3-l pa3-ns ph4-l">
+  <div id="cases" class="container cf mw9 center">
+  {% include case-list.html %}
   </div>
 </section>
 </main>
