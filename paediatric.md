@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: paediatric
+speciality: Paediatric
 title: Paediatric
 ---

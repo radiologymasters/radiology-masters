@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: headneck
+speciality: "Head & Neck"
 title: Head & Neck
 ---

@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: genitourinary
+speciality: Genitourinary
 title: Genitourinary
 ---

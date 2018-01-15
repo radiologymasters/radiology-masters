@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: frcr-exam-tips
+speciality: "Exam Tips"
 title: FRCR Exam Tips
 ---

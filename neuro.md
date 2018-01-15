@@ -1,4 +1,5 @@
 ---
 layout: list
-speciality: neuro
+speciality: Neuro
+title: Neuro
 ---
