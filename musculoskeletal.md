@@ -1,5 +1,5 @@
 ---
 layout: list
-speciality: musculoskeletal
+speciality: Musculoskeletal
 title: Musculoskeletal
 ---
