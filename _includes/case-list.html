@@ -14,8 +14,8 @@
 	{% when 'Hard' %}
 		{% assign difficulty-color = 'bg-rm-red' %}
 	{% endcase %}
-	  <article class="border-box fl w-100 w-50-m w-25-l pa2-ns">
-    	<a href="{{ case.url }}" class="ph2 ph0-ns pb3 link db dim">
+	  <article class="fl w-100 w-50-m w-25-l pa2-ns">
+    	<a href="{{ case.url }}" class="link db dim">
       	<div class="z-0 aspect-ratio aspect-ratio--16x9 cover bg-center" style="background-image:url({{ case.videoThumbnailMedium }});">
       		<div>
       			<span class="absolute left-1 top-1 f7 dib pa1 br1 w-auto {{ difficulty-color }} white">{{ case.difficulty | capitalize}}</span>
@@ -25,9 +25,7 @@
       			{% endif %}
       		</div>
       	</div>
-      	<div class="ph1">
-      		<h3 class="f5 mb0 pa1 br1 black-80">{{ case.title }}</h3>
-      	</div>
+      		<h3 class="f5 mb0 br1 black-80">{{ case.title }}</h3>
     	</a>
   </article>
 	{% endfor %}
