@@ -24,3 +24,9 @@
 <script src="{{site.script_path}}/auth.js"></script>
 <script src="{{site.script_path}}/plugins/display.name/display.name.plugin.js"></script>
 <!-- JS plugins for every page -->
+
+{% if page.url == "/" %}
+<!-- Animate.css for homepage -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+{% endif %}
