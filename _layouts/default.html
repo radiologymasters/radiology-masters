@@ -1,7 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="https://schema.org/Article">
 <head>
-{% include head.html %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>{% if not page.homepage %}{{page.title}} - {% endif %}Radiology Masters</title>
+    <meta name="description" content="{% if page.homepage %}Radiology video tutorials to help you pass your boards and FRCR exams. Short, detailed videos by experts on common radiology exam topics.{% else %}{{content | truncate: 200}}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+{% if page.path contains '_cases' %}
+  <meta name="twitter:card" content="{{content | truncatewords: 12 }}">
+  <meta name="twitter:site" content="@rad_masters">
+  <meta name="twitter:creator" content="@rad_masters">
+  <meta name="twitter:url" content="https://radiologymasters.com/{{page.url}}">
+  <meta name="twitter:title" content="{{page.title}}">
+  <meta name="twitter:description" content="{{content | truncate: 160 }}">
+  <meta name="twitter:image" content="{{page.videoThumbnailLarge}}">
+  
+  <link rel="author" href="https://radiologymasters.com">
+  <link rel="publisher" href="https://radiologymasters.com">
+  <meta itemprop="name" content="{{page.title}}">
+  <meta itemprop="description" content="{{content | truncate: 200 }}">
+  <meta itemprop="image" content="{{page.videoThumbnailLarge}}">
+{% endif %}
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/tachyons.min.css">
+	<style type="text/css">
+  html{font-family:'Open Sans',sans-serif;font-size:17px;font-variant-ligatures:no-common-ligatures;letter-spacing:.5px}#logo{font-family:Montserrat,Helvetica,Arial,sans-serif}#strapline{font-family:"Open Sans",sans-serif;letter-spacing:1px}.bg-rm-black,.hover-bg-rm-black:hover,header{background-color:#2B2B2F;color:#fafafa}.rm-black{color:#2B2B2F}.bg-rm-green,.hover-bg-rm-green:hover,.rm-green{background-color:#284C49}.bg-rm-red,.hover-bg-rm-red:hover{background-color:#D00102}.rm-red{color:#D00102}.b--darken{border-color:rgba(0,0,0,.1)}.currentColor{fill:currentColor}
+	</style>
 </head>
 
 <body class="currentColor {{ page.layout }}">
