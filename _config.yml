@@ -1,11 +1,4 @@
 title: Radiology Masters
-description: Radiology video tutorials to speed up your boards and FRCR exam learning. Take the tutor with you with our expert radiologist guides.
-logo: /assets/img/logo-48.png
-author: https://radiologymasters.com
-twitter:
-  username: rad_masters
-  card: summary
-
 mode: free
 
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -15,9 +8,6 @@ script_path: /assets/js
 # Build settings
 markdown: kramdown
 permalink: pretty
-
-#plugins:
-  - jekyll-seo-tag
 
 collections:
   cases:
