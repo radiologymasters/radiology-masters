@@ -11,9 +11,7 @@ markdown: kramdown
 permalink: pretty
 
 #plugins:
-#  jekyll_get:
-#    data: team
-#    json: 'https://api.airtable.com/v0/appwtzU8l4Ws9zttw/Cases?api_key=keynko6AC2MmOCZX3'
+  - jekyll-seo-tag
 
 collections:
   cases:
