@@ -2,7 +2,7 @@
 <html itemscope itemtype="https://schema.org/Article">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>{% if !page.homepage %}{{page.title}} - {% endif %}Radiology Masters</title>
+	<title>{% unless page.homepage %}{{page.title}} - {% endunless %}Radiology Masters</title>
     <meta name="description" content="{% if page.homepage %}Radiology video tutorials to help you pass your boards and FRCR exams. Short, detailed videos by experts on common radiology exam topics.{% else %}{{content | truncate: 200}}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
