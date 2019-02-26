@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" itemscope itemtype="https://schema.org/Article">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<title>{% if page.url != "/" %}{{page.title}} - {% endif %} Radiology Masters{% if page.url == "/" %}- Video tutorials from radiologists for FRCR exam success{% endif %}</title>
+	
+	{% if page.layout == "case" %}
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@rad_masters">
+	<meta name="twitter:creator" content="@rad_masters">
+	<meta name="twitter:url" content="{{page.url}}">
+	<meta name="twitter:title" content="{{page.title}}">
+	<meta name="twitter:description" content="{{content | truncate:199}}">
+	<meta name="twitter:image" content="{{videoThumbnailLarge}}">
+	
+      	<link rel="author" href="https://radiologymasters.com">
+      	<link rel="publisher" href="https://radiologymasters.com">
+      	<meta itemprop="name" content="{{page.title}}">
+      	<meta itemprop="description" content="{{content | truncate:199}}">
+      	<meta itemprop="image" content="{{videoThumbnailLarge}}">
+	{% endif %}
+	
+	
 	<!-- CSS -->
   <link rel="stylesheet" href="/assets/css/tachyons.min.css">
 	<style type="text/css">
