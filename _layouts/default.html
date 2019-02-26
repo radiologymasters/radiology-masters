@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<title>Radiology Masters - Video tutorials from expert radiologists</title>
+	<title>{% if page.url != "/" %}{{title}} - {% endif %} Radiology Masters{% if page.url == "/" %}- Video tutorials from radiologists for FRCR exam success{% endif %}</title>
 	<!-- CSS -->
   <link rel="stylesheet" href="/assets/css/tachyons.min.css">
 	<style type="text/css">
